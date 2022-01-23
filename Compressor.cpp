@@ -174,11 +174,13 @@ bool Compressor::FilesAreIdentical(const std::string& filename1, const std::stri
   unsigned char byte1 = 0;
   unsigned char byte2 = 0;
   int count = 1;
-  // While both streams are good, 
+  // While both streams are good and bytes match, read next byte
   while(ifs1.good() && ifs2.good() && byte1 == byte2) {
     ifs1.read(reinterpret_cast<char*>(&byte1), 1);
     ifs2.read(reinterpret_cast<char*>(&byte2), 1);
   }
+  // The files are identical if they match to the last byte,
+  // and the end of both files was reached.
   return byte1 == byte2 && ifs1.eof() && ifs2.eof();
 }
 
