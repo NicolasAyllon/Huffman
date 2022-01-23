@@ -142,7 +142,6 @@ void HuffmanTree::Flatten(BitNode* node, std::string& encoding) {
 
 // Private Methods
 // ***************
-
 // Recursively traverse tree in postorder and free memory of all nodes.
 void HuffmanTree::Erase(BitNode* node) {
   // Base case: if node is null, do nothing
