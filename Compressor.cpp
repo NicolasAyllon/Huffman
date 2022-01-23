@@ -48,6 +48,7 @@ std::string Compressor::compress(const std::string& filename) {
   // 0. Open a new file to write the data into
   std::string compressed_filename = MakeCompressedFileName(filename);
   std::ofstream outfile(compressed_filename, std::ios::out | std::ios::binary);
+
   // 1. null-terminated string of the extension of the original file
   std::string original_extension = GetFileExtension(filename);
   outfile.write(original_extension.c_str(), original_extension.length()+1);
@@ -98,7 +99,7 @@ std::string Compressor::compress(const std::string& filename) {
 
 // Decompress the input file and return the name of the decompressed file
 std::string Compressor::decompress(const std::string& filename) {
-  // Open compressed file in binary mode and verify it succeeded
+  // 0. Open compressed file in binary mode and verify it succeeded
   std::ifstream compressed_file(filename, std::ios::in | std::ios::binary);
   if(!compressed_file.is_open()) {
     std::cout << "ERROR: File not opened" << '\n';
