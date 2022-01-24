@@ -94,20 +94,6 @@ int main() {
       std::cout << '\n';
     }
   }
-
-  // std::vector<std::string> test_files = {
-  //   "tests/carina_nebula.jpg",
-  //   "tests/cygnus_loop_nebula.jpg",
-  //   "tests/emma.txt",
-  //   "tests/rain_world_family.jpg",
-  //   "tests/team_rocket.txt",
-  //   "tests/to_be_or_not_to_be.txt"
-  // };
-
-  // for(std::string filename : test_files) {
-  //   std::string compressed_filename = compressor.compress(filename);
-  //   std::string decompressed_filename = compressor.decompress(compressed_filename);
-  //   bool identical = compressor.FilesAreIdentical(filename, decompressed_filename);
-  //   std::cout << filename << " : " << (identical ? "pass" : "fail") << '\n';
-  // }
+  
+  return 0;
 }
