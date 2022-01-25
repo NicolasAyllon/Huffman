@@ -123,7 +123,7 @@ std::string Compressor::decompress(const std::string& filename) {
   char* flat_tree = new char[flat_tree_length + 1];
   compressed_file.read(flat_tree, flat_tree_length);
   flat_tree[flat_tree_length] = '\0'; // add null-terminator for c-string
-  std::string flat_tree_s(flat_tree, flat_tree_length); // <!> NEW buffer ctor 
+  std::string flat_tree_s(flat_tree, flat_tree_length);
   HuffmanTree tree = Unflatten(flat_tree_s);
   delete[] flat_tree;
   
