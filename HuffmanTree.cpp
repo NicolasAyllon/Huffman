@@ -120,7 +120,7 @@ std::string HuffmanTree::Flatten() {
   Flatten(root_, result);
   return result;
 }
-// Helping method which builds the string returned by Encode()
+// Helping method which builds the string returned by Flatten() above
 // Note: std::string encoding is an out parameter
 void HuffmanTree::Flatten(BitNode* node, std::string& encoding) {
   // Base case
